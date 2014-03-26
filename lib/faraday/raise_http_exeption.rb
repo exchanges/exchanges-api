@@ -6,19 +6,19 @@ module FaradayMiddleware
       @app.call(env).on_complete do |response|
         case response[:status].to_i
         when 400
-          raise Exchange::BadRequest, error_message_400(response)
+          raise Exchanges::BadRequest, error_message_400(response)
         when 401
-          raise Exchange::Unauthorized, error_message_400(response)
+          raise Exchanges::Unauthorized, error_message_400(response)
         when 404
-          raise Exchange::NotFound, error_message_400(response)
+          raise Exchanges::NotFound, error_message_400(response)
         when 500
-          raise Exchange::InternalServerError, error_message_500(response, "Something is technically wrong.")
+          raise Exchanges::InternalServerError, error_message_500(response, "Something is technically wrong.")
         when 502
-          raise Exchange::BadGateway, error_message_500(response, "The server returned an invalid or incomplete response.")
+          raise Exchanges::BadGateway, error_message_500(response, "The server returned an invalid or incomplete response.")
         when 503
-          raise Exchange::ServiceUnavailable, error_message_500(response, "Exchange is rate limiting your requests.")
+          raise Exchanges::ServiceUnavailable, error_message_500(response, "Exchanges is rate limiting your requests.")
         when 504
-          raise Exchange::GatewayTimeout, error_message_500(response, "504 Gateway Time-out")
+          raise Exchanges::GatewayTimeout, error_message_500(response, "504 Gateway Time-out")
         end
       end
     end
