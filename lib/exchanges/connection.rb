@@ -12,7 +12,7 @@ module Exchanges
       }
 
       Faraday::Connection.new(options) do |connection|
-        connection.use FaradayMiddleware::ExchangeAuth, client_id, token
+        connection.use FaradayMiddleware::ExchangeAuth, token
         connection.use Faraday::Request::UrlEncoded
         connection.use FaradayMiddleware::Mashify unless raw
         unless raw
