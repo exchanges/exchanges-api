@@ -1,5 +1,5 @@
 require 'faraday'
-# require File.expand_path('../version', __FILE__)
+require File.expand_path('../version', __FILE__)
 
 module Exchanges
   module Configuration
@@ -50,7 +50,7 @@ module Exchanges
     DEFAULT_FORMAT = :json
 
     # The user agent that will be sent to the API endpoint if none is set
-    DEFAULT_USER_AGENT = "Exchanges Ruby Gem #{VERSION}".freeze
+    DEFAULT_USER_AGENT = "Exchanges Ruby Gem #{Exchanges::VERSION}".freeze
 
     attr_accessor *VALID_OPTIONS_KEYS
 
