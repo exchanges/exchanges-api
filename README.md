@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/exchanges/exchanges-api.svg?branch=master)](https://travis-ci.org/exchanges/exchanges-api)
 # Exchanges::Api
 
 TODO: Write a gem description
