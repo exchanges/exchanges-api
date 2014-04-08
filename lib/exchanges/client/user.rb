@@ -9,8 +9,7 @@ module Exchanges
         response
       end
 
-      def feed(*args)
-        options = args.first.is_a?(Hash) ? args.pop : {}
+      def feed(options={})
         response = get('feed', options)
         response
       end

@@ -1,9 +1,9 @@
 module Exchanges
   class Cache
 
-    def initialize(store, prefix)
-      @store = store
-      @prefix = prefix
+    def initialize
+      @store = Exchnages.cache
+      @prefix = Exchnages.cache_prefix
     end
 
     def [](url)
